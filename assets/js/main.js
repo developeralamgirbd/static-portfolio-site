@@ -4,6 +4,7 @@ $(document).ready(function () {
     const year = $('#year');
     const mobileSidenav = $('#mobileSidenav');
     const closeNav = $('#closeNav');
+    const contactForm = $("#contactForm");
 
     
     // $(".navbar-toggler").click(function() {
@@ -37,6 +38,76 @@ $(document).ready(function () {
             }, 800);
         }
     });
+
+    // Portfoli Filter
+    $('.category-button').on('click', function() {
+      const category = $(this).data('category');
+      if (category === 'all') {
+        $('.portfolio-item').show();
+      } else {
+        $('.portfolio-item').filter('[data-category="' + category + '"]').show();
+        $('.portfolio-item').not('[data-category="' + category + '"]').hide();
+      }
+    });
+
+    // contact form validation 
+  
+    contactForm.submit(function(event) {
+      event.preventDefault();
+      const valide = validateForm();
+      const name = $('#name').val().trim();
+      const email = $('#email').val().trim();
+      const message = $('#message').val().trim();
+      if(valide){
+        
+          alert(`Name: ${name} \nEmail: ${email} \nMessage: ${message}`)
+      }
+
+    });
+
+function validateForm() {
+  const name = $('#name').val().trim();
+    const email = $('#email').val().trim();
+    const message = $('#message').val().trim();
+
+  const nameError = $('#nameError');
+  const emailError = $('#emailError');
+  const messageError = $('#messageError');
+  // Name validation
+  if (name === '') {
+    nameError.text('Please enter your name.')
+    return false;
+  }else{
+    nameError.text('')
+  }
+  
+  // Email validation
+  if (email === '') {   
+    emailError.text('Please enter your email.')
+    return false;
+  } else if (!isValidEmail(email)) {
+      emailError.text('Please enter a valid email address.')
+    return false;
+  }else{
+    emailError.text('')
+  }
+  
+  // Message validation
+  if (message === '') {  
+    messageError.text('Please enter your message.')
+    return false;
+  }else{
+    messageError.text('')
+  }
+  
+  return true;
+}
+
+function isValidEmail(email) {
+  const regex = /^\S+@\S+\.\S+$/;
+  return regex.test(email);
+}
+
 
     // Date add in copyritht
     const date = new Date();

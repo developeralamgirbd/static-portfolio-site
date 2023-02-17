@@ -136,8 +136,15 @@ want to prove myself to be the best fit for your job
 <section id="portfolio">
     <div class="container">
         <h2 class="text-center text-primary section-title">Portfolio</h2>
+
+        <div class="category-buttons d-flex justify-content-center mb-2">
+            <button class="category-button mr-2 border-primary btn mt-2 text-secondary py-2" data-category="all">All</button>
+            <button class="category-button mr-2 border-primary btn mt-2 text-secondary py-2" data-category="node">Node js</button>    
+            <button class="category-button mr-2 border-primary btn mt-2 text-secondary py-2" data-category="laravel">Laravel</button>
+          </div>
+
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 portfolio-item" data-category="node">
                 <div class="card bg-box p-4">
                    <div class="d-flex justify-content-between">
                     <i class="far fa-folder text-secondary h3"></i>
@@ -163,7 +170,7 @@ want to prove myself to be the best fit for your job
                 </div>
 
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 portfolio-item" data-category="node">
                 <div class="card bg-box p-4">
                    <div class="d-flex justify-content-between">
                     <i class="far fa-folder text-secondary h3"></i>
@@ -189,7 +196,7 @@ want to prove myself to be the best fit for your job
                 </div>
 
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 portfolio-item" data-category="node">
                 <div class="card bg-box p-4">
                    <div class="d-flex justify-content-between">
                     <i class="far fa-folder text-secondary h3"></i>
@@ -213,8 +220,7 @@ want to prove myself to be the best fit for your job
                 </div>
 
             </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 portfolio-item" data-category="laravel">
                 <div class="card bg-box p-4">
                    <div class="d-flex justify-content-between">
                     <i class="far fa-folder text-secondary h3"></i>
@@ -329,20 +335,23 @@ want to prove myself to be the best fit for your job
 
         <div class="row">
             <div class="col-lg-6 col-md-12 offset-lg-3">
-                <form>
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="name" class="text-secondary">Name </label>
                         <input type="text" class="form-control" id="name">
+                        <p id="nameError" class="text-danger"></p>
                     </div>
                     <div class="form-group">
                         <label for="email" class="text-secondary">Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" name="email" class="form-control" id="email">
+                        <p id="emailError" class="text-danger"></p>
                     </div>
                     <div class="form-group">
                         <label for="message" class="text-secondary">Message</label>
-                        <textarea class="form-control" id="message"></textarea>
+                        <textarea class="form-control" name="message" id="message"></textarea>
+                        <p id="messageError" class="text-danger"></p>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input class="btn btn-primary" type="submit" value="Submit"/>
                 </form>
             </div>
         </div>
