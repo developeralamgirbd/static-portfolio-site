@@ -1,0 +1,254 @@
+.show-nav {
+    display: block!important;
+}
+
+a{
+    text-decoration: none;
+}
+.nav-item a:hover {
+    color: #FFC107FF!important;
+}
+
+
+
+.section-title{
+    position: relative;
+    /*  new lines  */
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.section-title:before{
+    content:" ";
+    display: block;
+    height: 2px;
+    width: 130px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: var(--yellow);
+  }
+
+  .section-title:after{
+    content:" ";
+    height: 2px;
+    width: 130px;
+    background: var(--yellow);
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+
+  .photo::after {
+    content: "";
+    display: block;
+    border: 2px solid var(--yellow);
+    position: absolute;
+    left: 16px;
+    width: 250px;
+    height: 300px;
+    top: 16px;
+    z-index: -1;
+}
+
+.photo {
+    width: 250px;
+    position: relative;
+}
+
+.photo::before {
+    content: "";
+    display: block;
+    background: var(--yellow);
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    opacity: 30%;
+    transition: 0.5s;
+}
+.photo:hover::before {
+    content: "";
+    display: block;
+    background: var(--yellow);
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    opacity: 0%;
+    transition: 0.5s;
+}
+
+.tecknologyTable tbody tr td::before {
+     display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #6980fe;
+}
+
+.tecknologyTable tbody tr td::before {
+    display: inline-block;
+    width: 0;
+    content: "";
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent var(--yellow);
+    margin-right: 4px;
+}
+
+#contact{
+    margin-bottom: 150px;
+}
+
+
+.social-section {
+    position: fixed;
+    left: 20px;
+    bottom: 50px;
+}
+.social-section ul{
+    list-style: none;
+}
+
+.social-section ul li{
+    padding-bottom: 10px;
+}
+
+body {
+    padding-top: 70px; /* Adjust height of navbar to match your content */
+  }
+
+nav.shrink {
+padding-top: 0;
+padding-bottom: 0;
+height: 60px;
+transition: 0.3s;
+border-bottom: 1px solid var(--yellow);
+}
+nav{
+    transition: 0.3s;
+}
+
+
+.select {
+    color: var(--yellow) !important;
+  }
+
+.navbar-fixed-top {
+top: 0;
+border-width: 0 0 1px;
+}
+
+/* Mobile Sidenav */
+.mobilesidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--teal);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+   
+  }
+  
+  .mobilesidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .mobilesidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .mobilesidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: red;
+  }
+
+
+  /* Testimornial Css */
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+
+  /* Testiorminal Section */
+  .testimornial img{
+    width: 100px;
+    height: 100px !important;
+  }
+
+  .testimornial{
+    height: 500px;
+  }
+  
+@media screen and (max-height: 450px) {
+  .mobilesidenav {padding-top: 15px;}
+  .mobilesidenav a {font-size: 18px;}
+}
+
+@media (min-width: 768px) {
+.navbar-fixed-top {
+    border-radius: 0;
+}
+
+}
+
+@media (max-width: 768px) {
+  .section-title { 
+    margin: 20px auto;
+}
+.section-title:before {
+  content: " ";
+  display: block;
+  height: 2px;
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: var(--yellow);
+}
+
+.section-title:after {
+  content: " ";
+  height: 2px;
+  width: 70px;
+  background: var(--yellow);
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+  
+  }
+
